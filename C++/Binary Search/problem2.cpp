@@ -14,23 +14,30 @@ int main(){
             first = mid;
             end = mid-1;
         }
+        else if (arr[mid]>target){
+            end = mid;
+        }
         else{
-            start=mid+1;
+            start = mid +1;
         }
         
     }
     cout<<first;
     // for last index
-    start = 0 ;
-    end = 7;
-    while(start<=end){
+    start = 7 ;
+    end = 0;
+    while(end <= start){
         int mid = start + (end - start)/2;
         if(arr[mid]==target){
             last = mid;
-            start = mid+1;
+            end = mid+1;
+            
+        }
+        else if(arr[mid]>target){
+            start = mid-1;
         }
         else{
-            end=mid-1;
+            end=mid; 
         }
         
     }
